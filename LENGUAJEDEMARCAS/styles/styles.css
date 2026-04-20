@@ -10,6 +10,14 @@ body {
     padding: 40px 20px;
     background: linear-gradient(135deg, #1e90ff, #4facfe);
     color: white;
+    /* Aplicamos el mismo efecto del logo al título */
+    text-shadow: 
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000,
+         4px 4px 0px rgba(0,0,0,0.2);
+    
 }
 
 .header-simple h1 {
@@ -25,6 +33,7 @@ header {
     background: #1e90ff;
     color: white;
     padding: 15px;
+    border-bottom: 2px solid black;
 }
 
 /* CALENDARIO GRID */
@@ -36,6 +45,7 @@ header {
     max-width: 900px;
     margin: 40px auto;
     padding: 20px;
+    border-bottom: 2px solid black;
 }
 
 /* DÍAS DE LA SEMANA */
@@ -49,7 +59,7 @@ header {
 /* DÍAS */
 .dia {
     background: #111;
-    border: 1px solid #1e3cff;
+    border: 1px solid #4facfe;
     border-radius: 10px;
 
     height: 80px;
@@ -65,7 +75,7 @@ header {
 
 /* EFECTO HOVER */
 .dia:hover {
-    background: #1e3cff;
+    background: #4facfe;
     transform: scale(1.05);
 }
 
@@ -90,7 +100,7 @@ header {
 .contenido h2 {
     margin-bottom: 20px;
     font-size: 28px;
-    color: #1e90ff;
+    color: #4facfe;
 }
 
 .contenido p {
@@ -100,9 +110,22 @@ header {
 }
 
 .logo {
-    font-weight: bold;
-    font-size: 20px;
+    font-weight: 900; /* Más grueso para que el borde se note */
+    font-size: 32px; /* Un poco más grande */
+    font-family: 'Arial Black', sans-serif;
+    color: #ffffff; /* Letra blanca para que resalte el borde */
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    
+    /* El borde negro y la sombra */
+    text-shadow: 
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000, /* Estas 4 líneas crean el borde negro */
+         3px 3px 0px rgba(0,0,0,0.2); /* Esta es la sombra de profundidad */
 }
+
 
 nav ul {
     display: flex;
@@ -113,6 +136,21 @@ nav ul {
 nav a {
     color: white;
     text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    
+    /* El recuadro */
+    padding: 8px 16px;
+    border: 2px solid white; /* Recuadro blanco para que resalte sobre el azul */
+    background: transparent; /* Fondo transparente */
+    display: inline-block;
+    transition: all 0.2s;
+}
+
+
+nav a:hover {
+    background: white;
+    color: #1e90ff; /* Cambia el texto al color del header */
 }
 
 /* HERO */
@@ -124,9 +162,28 @@ nav a {
 .btn {
     background: #1e90ff;
     color: white;
-    padding: 10px 20px;
+    padding: 12px 24px;
     display: inline-block;
+    border-radius: 6px;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: 600;
+    
+    /* Añadimos el borde negro */
+    border: 2px solid black; 
+    
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+.btn:hover {
+    background: #1c86ee;
+    /* Opcional: el borde también puede cambiar al pasar el ratón */
+    border-color: #333; 
+    transform: translateY(-2px);
+}
+
 
 /* CARDS */
 .features {
@@ -139,6 +196,7 @@ nav a {
     background: white;
     padding: 20px;
     border-radius: 10px;
+    border: 2px solid #1e90ff;
 }
 
 /* CALENDARIO */
@@ -158,17 +216,35 @@ nav a {
 
 /* TAREAS */
 .tarea {
-    padding: 10px;
-    margin: 10px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    border-radius: 8px; /* Bordes redondeados modernos */
+    font-family: 'Segoe UI', Roboto, sans-serif; /* Tipografía limpia */
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s ease; /* Feedback visual al pasar el mouse */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Sombra sutil */
+    border-left: 10px solid transparent; /* Acento de color lateral */
+}
+
+.tarea:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .pendiente {
-    background: #ffcccb;
+    background: #ffffff;
+    border-left-color: #ff5252; /* Rojo vibrante solo en el borde */
+    color: #444;
 }
 
 .completada {
-    background: #90ee90;
+    background: #f8fff8;
+    border-left-color: #4caf50; /* Verde esmeralda en el borde */
+    color: #888;
+    text-decoration: line-through; /* Tacha el texto automáticamente */
 }
+
 
 /* FORMULARIO */
 .formulario {
@@ -207,13 +283,16 @@ footer {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-
     gap: 40px;
-
-    padding: 60px 20px;
-
+    padding: 60px 40px;
     max-width: 1000px;
-    margin: 0 auto;   /* ESTO lo centra todo */
+    margin: 40px auto;
+
+    /* Estilo de recuadro limpio */
+    background: #ffffff;
+    border: 3px solid #000; /* Recuadro negro marcado */
+    border-radius: 12px;    /* Esquinas suavizadas */
+    box-shadow: none;       /* Aseguramos que no haya sombra */
 }
 
 /* RESPONSIVE */

@@ -22,6 +22,12 @@ CREATE TABLE CONTACTO (
     FOREIGN KEY (id_usuario) REFERENCES USUARIO(id_usuario)
 );
 
+CREATE TABLE CATEGORIA_EVENTO (
+    id_categoria INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(50),
+    color VARCHAR(20)
+);
+
 CREATE TABLE EVENTO (
     id_evento INT AUTO_INCREMENT PRIMARY KEY,
     titulo VARCHAR(100) NOT NULL,
@@ -36,23 +42,6 @@ CREATE TABLE EVENTO (
     FOREIGN KEY (id_categoria) REFERENCES CATEGORIA_EVENTO(id_categoria)
 );
 
-CREATE TABLE CATEGORIA_EVENTO (
-    id_categoria INT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(50),
-    color VARCHAR(20)
-);
-
-CREATE TABLE RECORDATORIO (
-    id_recordatorio INT AUTO_INCREMENT PRIMARY KEY,
-    fecha_aviso DATETIME,
-    tipo VARCHAR(20),
-    estado VARCHAR(20),
-    id_evento INT NULL,
-    id_tarea INT NULL,
-    FOREIGN KEY (id_evento) REFERENCES EVENTO(id_evento),
-    FOREIGN KEY (id_tarea) REFERENCES TAREA(id_tarea)
-);
-
 CREATE TABLE TAREA (
     id_tarea INT AUTO_INCREMENT PRIMARY KEY,
     titulo VARCHAR(100),
@@ -64,6 +53,17 @@ CREATE TABLE TAREA (
     id_categoria_tarea INT,
     FOREIGN KEY (id_usuario) REFERENCES USUARIO(id_usuario),
     FOREIGN KEY (id_categoria_tarea) REFERENCES CATEGORIA_TAREA(id_categoria_tarea)
+);
+
+CREATE TABLE RECORDATORIO (
+    id_recordatorio INT AUTO_INCREMENT PRIMARY KEY,
+    fecha_aviso DATETIME,
+    tipo VARCHAR(20),
+    estado VARCHAR(20),
+    id_evento INT NULL,
+    id_tarea INT NULL,
+    FOREIGN KEY (id_evento) REFERENCES EVENTO(id_evento),
+    FOREIGN KEY (id_tarea) REFERENCES TAREA(id_tarea)
 );
 
 CREATE TABLE CATEGORIA_TAREA (

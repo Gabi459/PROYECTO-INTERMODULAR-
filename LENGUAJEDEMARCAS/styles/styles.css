@@ -1,54 +1,141 @@
+/*ESTILOS GENERALES*/
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background-color: #f5f7fa;
+    font-family: Arial, sans-serif; /*Fuente principal*/
+    margin: 0; /*Elimina márgenes por defecto*/
+    background-color: #f5f7fa; /*Fondo general suave*/
 }
 
-/* HEADER SIMPLE */
+/*HEADER SIMPLE (PORTADA)*/
 .header-simple {
-    text-align: center;
-    padding: 40px 20px;
-    background: linear-gradient(135deg, #1e90ff, #4facfe);
-    color: white;
-    /* Aplicamos el mismo efecto del logo al título */
+    text-align: center; /*Centra el contenido*/
+    padding: 40px 20px; /*Espaciado interno*/
+    background: linear-gradient(135deg, #1e90ff, #4facfe); /*Fondo degradado*/
+    color: white; /*Texto blanco*/
+
+    /*Efecto de borde + sombra en el texto*/
     text-shadow: 
         -1px -1px 0 #000,  
          1px -1px 0 #000,
         -1px  1px 0 #000,
          1px  1px 0 #000,
          4px 4px 0px rgba(0,0,0,0.2);
-    
 }
 
 .header-simple h1 {
-    font-size: 36px;
-    margin: 0;
+    font-size: 36px; /*Tamaño grande del título*/
+    margin: 0; /*Sin margen*/
 }
 
-/* HEADER */
+/*HEADER PRINCIPAL*/
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #1e90ff;
+    display: flex; /*Layout en fila*/
+    justify-content: space-between; /*Separa logo y menú*/
+    align-items: center; /*Alinea verticalmente*/
+    background: #1e90ff; /*Color azul*/
     color: white;
     padding: 15px;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid black; /*Línea inferior*/
 }
 
-/* CALENDARIO GRID */
+/*LOGO*/
+.logo {
+    font-weight: 900; /*Texto muy grueso*/
+    font-size: 32px;
+    font-family: 'Arial Black', sans-serif;
+    color: #ffffff;
+    letter-spacing: 1px;
+    text-transform: uppercase; /*Todo en mayúsculas*/
+
+    /*Borde negro + sombra*/
+    text-shadow: 
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000,
+         3px 3px 0px rgba(0,0,0,0.2);
+}
+
+/*NAVEGACIÓN*/
+nav ul {
+    display: flex; /*Menú horizontal*/
+    list-style: none; /*Quita puntos de lista*/
+    gap: 20px; /*Espacio entre enlaces*/
+}
+
+nav a {
+    color: white;
+    text-decoration: none; /*Sin subrayado*/
+    font-weight: bold;
+    border-radius: 8px;
+
+    padding: 8px 16px; /*Espacio interno*/
+    border: 2px solid white; /*Borde blanco*/
+    background: transparent;
+    display: inline-block;
+    transition: all 0.2s; /*Animación suave*/
+}
+
+nav a:hover {
+    background: white; /*Fondo blanco al pasar*/
+    color: #1e90ff; /*Texto azul*/
+}
+
+/*HERO (SECCIÓN PRINCIPAL)*/
+.hero {
+    text-align: center; /*Centra contenido*/
+    padding: 50px;
+}
+
+/*BOTONES*/
+.btn {
+    background: #1e90ff;
+    color: white;
+    padding: 12px 24px;
+    display: inline-block;
+    border-radius: 6px;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: 600;
+
+    border: 2px solid black; /*Borde negro*/
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+    background: #1c86ee; /*Azul más oscuro*/
+    border-color: #333;
+    transform: translateY(-2px); /*Efecto de levantar*/
+}
+
+/*TARJETAS / FEATURES*/
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #1e90ff;
+}
+
+/*CALENDARIO (ESTILO 1)*/
 .calendario {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(7, 1fr); /*7 columnas (días)*/
     gap: 8px;
 
     max-width: 900px;
-    margin: 40px auto;
+    margin: 40px auto; /*Centrado*/
     padding: 20px;
     border-bottom: 2px solid black;
 }
 
-/* DÍAS DE LA SEMANA */
+/*Nombres de los días*/
 .dia-nombre {
     text-align: center;
     font-weight: bold;
@@ -56,7 +143,7 @@ header {
     color: #aab6ff;
 }
 
-/* DÍAS */
+/*Días del calendario (oscuro)*/
 .dia {
     background: #111;
     border: 1px solid #4facfe;
@@ -69,25 +156,38 @@ header {
     align-items: flex-start;
 
     font-size: 16px;
-
     transition: 0.2s;
 }
 
-/* EFECTO HOVER */
+/*Hover en días*/
 .dia:hover {
     background: #4facfe;
     transform: scale(1.05);
 }
 
-/* DÍAS VACÍOS */
+/*Espacios vacíos del calendario*/
 .vacio {
     background: transparent;
     border: none;
 }
 
+/*CALENDARIO (ESTILO 2)*/
+.calendario-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    padding: 20px;
+}
 
+/*Sobrescribe el estilo anterior de .dia*/
+.dia {
+    background: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+}
 
-/* CONTENIDO */
+/*CONTENIDO PRINCIPAL*/
 .contenido {
     max-width: 800px;
     margin: 40px auto;
@@ -104,174 +204,69 @@ header {
 }
 
 .contenido p {
-    line-height: 1.7;
+    line-height: 1.7; /*Mejora lectura*/
     margin-bottom: 15px;
     color: #333;
 }
 
-.logo {
-    font-weight: 900; /* Más grueso para que el borde se note */
-    font-size: 32px; /* Un poco más grande */
-    font-family: 'Arial Black', sans-serif;
-    color: #ffffff; /* Letra blanca para que resalte el borde */
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    
-    /* El borde negro y la sombra */
-    text-shadow: 
-        -1px -1px 0 #000,  
-         1px -1px 0 #000,
-        -1px  1px 0 #000,
-         1px  1px 0 #000, /* Estas 4 líneas crean el borde negro */
-         3px 3px 0px rgba(0,0,0,0.2); /* Esta es la sombra de profundidad */
-}
-
-
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 20px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 8px;
-    
-    /* El recuadro */
-    padding: 8px 16px;
-    border: 2px solid white; /* Recuadro blanco para que resalte sobre el azul */
-    background: transparent; /* Fondo transparente */
-    display: inline-block;
-    transition: all 0.2s;
-}
-
-
-nav a:hover {
-    background: white;
-    color: #1e90ff; /* Cambia el texto al color del header */
-}
-
-/* HERO */
-.hero {
-    text-align: center;
-    padding: 50px;
-}
-
-.btn {
-    background: #1e90ff;
-    color: white;
-    padding: 12px 24px;
-    display: inline-block;
-    border-radius: 6px;
-    text-decoration: none;
-    font-family: sans-serif;
-    font-weight: 600;
-    
-    /* Añadimos el borde negro */
-    border: 2px solid black; 
-    
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.btn:hover {
-    background: #1c86ee;
-    /* Opcional: el borde también puede cambiar al pasar el ratón */
-    border-color: #333; 
-    transform: translateY(-2px);
-}
-
-
-/* CARDS */
-.features {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.card {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    border: 2px solid #1e90ff;
-}
-
-/* CALENDARIO */
-.calendario-grid {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 10px;
-    padding: 20px;
-}
-
-.dia {
-    background: white;
-    padding: 20px;
-    text-align: center;
-    border-radius: 8px;
-}
-
-/* TAREAS */
+/*TAREAS*/
 .tarea {
     padding: 16px 20px;
     margin-bottom: 12px;
-    border-radius: 8px; /* Bordes redondeados modernos */
-    font-family: 'Segoe UI', Roboto, sans-serif; /* Tipografía limpia */
+    border-radius: 8px;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+
     display: flex;
     align-items: center;
-    transition: transform 0.2s ease; /* Feedback visual al pasar el mouse */
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Sombra sutil */
-    border-left: 10px solid transparent; /* Acento de color lateral */
+
+    transition: transform 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+
+    border-left: 10px solid transparent; /* Barra lateral */
 }
 
+/*Efecto hover*/
 .tarea:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
+/*Tarea pendiente*/
 .pendiente {
     background: #ffffff;
-    border-left-color: #ff5252; /* Rojo vibrante solo en el borde */
+    border-left-color: #ff5252; /*Rojo*/
     color: #444;
 }
 
+/*Tarea completada*/
 .completada {
     background: #f8fff8;
-    border-left-color: #4caf50; /* Verde esmeralda en el borde */
+    border-left-color: #4caf50; /*Verde*/
     color: #888;
-    text-decoration: line-through; /* Tacha el texto automáticamente */
+    text-decoration: line-through; /*Tachado*/
 }
 
-
-/* FORMULARIO */
+/*FORMULARIO*/
 .formulario {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /*Elementos en columna*/
     width: 300px;
     margin: auto;
 }
 
-input, textarea {
+/*Inputs y textarea*/
+input,
+textarea {
     margin: 10px 0;
     padding: 8px;
 }
 
-
-/* DESTACADOS */
+/*DESTACADOS*/
 strong {
-    color: #1e90ff;
+    color: #1e90ff; /*Resalta texto*/
 }
 
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 369px;
-    color: #666;
-}
-
+/*NOTAS*/
 .nota {
     margin-top: 15px;
     font-size: 13px;
@@ -279,34 +274,47 @@ footer {
     font-style: italic;
 }
 
+/*SECCIÓN CONTACTO*/
 .contacto-container {
     display: flex;
     justify-content: center;
     align-items: flex-start;
     gap: 40px;
+
     padding: 60px 40px;
     max-width: 1000px;
     margin: 40px auto;
 
-    /* Estilo de recuadro limpio */
     background: #ffffff;
-    border: 3px solid #000; /* Recuadro negro marcado */
-    border-radius: 12px;    /* Esquinas suavizadas */
-    box-shadow: none;       /* Aseguramos que no haya sombra */
+    border: 3px solid #000; /*Marco negro*/
+    border-radius: 12px;
+    box-shadow: none;
 }
 
-/* RESPONSIVE */
+/*FOOTER*/
+footer {
+    width: 100%;
+    text-align: center; /* Centra el texto */
+    padding: 25px 0;
+    
+    background: linear-gradient(135deg, #111, #1c1c1c);
+    color: #ccc;
+
+    border-top: 2px solid #1e90ff;
+}
+
+/*RESPONSIVE (MÓVILES)*/
 @media (max-width: 768px) {
     .features {
-        flex-direction: column;
+        flex-direction: column; /*Pasa a vertical*/
         align-items: center;
     }
 
     nav ul {
-        flex-direction: column;
+        flex-direction: column; /*Menú en columna*/
     }
 
     .calendario-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); /*2 columnas en móvil*/
     }
 }

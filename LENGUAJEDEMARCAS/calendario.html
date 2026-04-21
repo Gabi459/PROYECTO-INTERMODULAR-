@@ -2,27 +2,41 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+
+    <!--Título de la página que aparece en la pestaña del navegador-->
     <title>Calendario 🗓️</title>
+
+    <!--Enlace al archivo de estilos CSS externo-->
     <link rel="stylesheet" href="styles/styles.css">
 
 </head>
 
 <body>
 
+<!--Cabecera principal del calendario-->
 <header class="header-simple">
+
+    <!--Título donde se mostrará el mes actual-->
     <h1 id="mes-titulo"></h1>
 
+    <!--Contenedor de botones para navegar entre meses (SI PINCHAS SE VA CAMBIANDO DE MES) -->
     <div class="botones">
+
+        <!--Botón para ir al mes anterior-->
         <button onclick="mesAnterior() ">◀</button>
+
+        <!--Botón para ir al mes siguiente-->
         <button onclick="mesSiguiente()">▶</button>
+
     </div>
 </header>
 
 <main>
 
+<!--Sección principal del calendario-->
 <section class="calendario" id="calendario">
 
-    <!-- Días de la semana -->
+    <!--Encabezados de los días de la semana-->
     <div class="dia-nombre">Lun</div>
     <div class="dia-nombre">Mar</div>
     <div class="dia-nombre">Mié</div>
@@ -31,11 +45,12 @@
     <div class="dia-nombre">Sáb</div>
     <div class="dia-nombre">Dom</div>
 
-    <!-- Días generados por JS -->
+    <!--Aquí se generarán dinámicamente los días del mes mediante JavaScript-->
 </section>
 
 </main>
 
+<!--Enlace al archivo JavaScript que controla la lógica del calendario-->
 <script src="js/app.js"></script>
 
 </body>

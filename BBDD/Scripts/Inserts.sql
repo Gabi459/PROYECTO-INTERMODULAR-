@@ -4,6 +4,7 @@ VALUES
 ('Diego', 'Couto Cabezas', 'diegocc@mail.com', '8234', '2023-07-10'),
 ('Carlos', 'Molina Berenger', 'carlosmb@mail.com', '0834', '2026-07-30'),
 ('Marcos', 'Padero Cambra', 'marcospc@mail.com', '1234', '2021-06-25');
+
 -- CONTACTOS
 INSERT INTO CONTACTO (nombre, apellidos, telefono, email, direccion, notas, id_usuario)
 VALUES
@@ -39,7 +40,7 @@ VALUES
 
 -- CATEGORIAS TAREA
 INSERT INTO CATEGORIA_TAREA (nombre, color)
-VALUES
+VALUES 
 ('Estudio', 'amarillo'),
 ('Trabajo', 'azul'),
 ('Deberes', 'verde');

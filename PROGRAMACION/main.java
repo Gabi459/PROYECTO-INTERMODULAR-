@@ -1,6 +1,6 @@
 import dao.*;
-import model.*;
 import db.Conexion;
+import model.*;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -12,23 +12,21 @@ public class main {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        int opcion;
 
         try {
-            //  Conexión usando tu método
             Connection conexion = Conexion.getConexion();
 
             UsuarioDAO usuarioDAO = new UsuarioDAO();
             EventoDAO eventoDAO = new EventoDAO();
             TareaDAO tareaDAO = new TareaDAO();
 
+            int opcion;
+
             do {
-                System.out.println("======================= AGENDA PRO =======================");
-                System.out.println("|   1. Mostrar usuarios                                  |");
-                System.out.println("|   2. Mostrar eventos                                   |");
-                System.out.println("|   3. Mostrar tareas                                    |");
-                System.out.println("|   0. Salir                                             |");
-                System.out.println("==========================================================");
+                System.out.println("\n===== AGENDA PRO =====");
+                System.out.println("1. Usuario (Login)");
+                System.out.println("2. Mostrar usuarios");
+                System.out.println("0. Salir");
 
                 opcion = sc.nextInt();
                 sc.nextLine();
@@ -36,9 +34,62 @@ public class main {
                 switch (opcion) {
 
                     case 1:
+                        System.out.print("Email: ");
+                        String email = sc.nextLine();
+
+                        System.out.print("Password: ");
+                        String pass = sc.nextLine();
+
+                        int idUsuario = usuarioDAO.login(conexion, email, pass);
+
+                        if (idUsuario != -1) {
+                            System.out.println("Login correcto");
+
+                            int subop;
+                            do {
+                                System.out.println("\n--- MENÚ USUARIO ---");
+                                System.out.println("1. Mostrar eventos");
+                                System.out.println("2. Mostrar tareas");
+                                System.out.println("0. Volver");
+
+                                subop = sc.nextInt();
+                                sc.nextLine();
+
+                                switch (subop) {
+
+                                    case 1:
+                                        List<Evento> eventos = eventoDAO.obtenerEventosPorUsuario(conexion, idUsuario);
+
+                                        for (Evento e : eventos) {
+                                            System.out.printf("- Título: %s | Fecha: %s | Descripción: %s%n",
+                                                    e.getTitulo(),
+                                                    e.getFechaInicio(),
+                                                    e.getDescripcion());
+                                        }
+                                        break;
+
+                                    case 2:
+                                        List<Tarea> tareas = tareaDAO.obtenerTareasPorUsuario(conexion, idUsuario);
+
+                                        for (Tarea t : tareas) {
+                                            System.out.printf("- Tarea: %s | Fecha límite: %s | Estado: %s%n",
+                                                    t.getTitulo(),
+                                                    t.getFechaLimite(),
+                                                    t.getEstado());
+                                        }
+                                        break;
+                                }
+
+                            } while (subop != 0);
+
+                        } else {
+                            System.out.println("Login incorrecto");
+                        }
+                        break;
+
+                    case 2:
                         List<Usuario> usuarios = usuarioDAO.obtenerUsuarios(conexion);
 
-                        System.out.println("------------------------- USUARIOS -----------------------");
                         for (Usuario u : usuarios) {
                             System.out.printf("Nombre: %s %s | Email: %s%n",
                                     u.getNombre(),
@@ -46,55 +97,16 @@ public class main {
                                     u.getEmail());
                         }
                         break;
-
-                    case 2:
-                        List<Evento> eventos = eventoDAO.obtenerEventos(conexion);
-
-                        System.out.println("------------------------- EVENTOS ------------------------");
-                        for (Evento e : eventos) {
-                            System.out.printf("Título: %s%nDescripción: %s%nInicio: %s | Fin: %s%nUbicación: %s | Prioridad: %s%n",
-                                    e.getTitulo(),
-                                    e.getDescripcion(),
-                                    e.getFechaInicio(),
-                                    e.getFechaFin(),
-                                    e.getUbicacion(),
-                                    e.getPrioridad());
-                            System.out.println("----------------------------------------------------------");
-                        }
-                        break;
-
-                    case 3:
-                        List<Tarea> tareas = tareaDAO.obtenerTareas(conexion);
-
-                        System.out.println("------------------------- TAREAS -------------------------");
-                        for (Tarea t : tareas) {
-                            System.out.printf("Título: %s%nDescripción: %s%nFecha límite: %s%nEstado: %s | Prioridad: %s%n",
-                                    t.getTitulo(),
-                                    t.getDescripcion(),
-                                    t.getFechaLimite(),
-                                    t.getEstado(),
-                                    t.getPrioridad());
-                            System.out.println("----------------------------------------------------------");
-                        }
-                        break;
-
-                    case 0:
-                        System.out.println("Saliendo...");
-                        break;
-
-                    default:
-                        System.out.println("Opción no válida");
                 }
 
             } while (opcion != 0);
 
-            // Cerrar conexión
             conexion.close();
 
         } catch (SQLException e) {
-            System.out.println("Error de conexión con la base de datos");
             e.printStackTrace();
         }
+
         sc.close();
     }
 }

@@ -1,4 +1,4 @@
-package dao;
+package db;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -12,7 +12,6 @@ public class Conexion {
         String user = "root";
         String pwd = "mysql";
 
-        return DriverManager.getConnection(url,user, pwd);
-
+        return DriverManager.getConnection(url, user, pwd);
     }
 }

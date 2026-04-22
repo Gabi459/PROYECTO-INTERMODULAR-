@@ -29,13 +29,13 @@ VALUES
 -- EVENTOS
 INSERT INTO EVENTO (titulo, descripcion, fecha_inicio, fecha_fin, ubicacion, prioridad, id_usuario, id_categoria)
 VALUES
-('Reunión proyecto', 'Reunión con el equipo', '2026-04-15 10:00:00', '2026-04-15 11:00:00', 'Oficina', 'alta', 19, 4),
-('Examen', 'Examen de programación', '2026-04-20 13:00:00', '2026-04-20 14:00:00', 'Universidad', 'alta', 21, 7),
-('Fiesta', 'Fiesta de Manolito', '2026-06-18 20:00:00', '2026-06-19 1:00:00', 'Casa de Manolito', 'media', 21, 5),
-('Quedada', 'Quedar con Karima', '2026-07-08 14:00:00', '2026-07-08 17:00:00', 'Restaurante Tony', 'muy alta', 20, 6),
-('Partido', 'Partido de fútbol', '2026-04-17 09:00:00', '2026-04-17 10:30:00', 'Estadio Metropolitano', 'baja', 19, 5),
-('Cine', 'Ir al cine con Diego', '2026-04-25 18:00:00', '2026-04-15 20:00:00', 'Yelmo cines', 'media', 20, 5),
-('Cita médica', 'Revisión anual', '2026-04-18 09:00:00', '2026-04-18 09:30:00', 'Centro salud', 'media', 21, 6);
+('Reunión proyecto', 'Reunión con el equipo', '2026-04-15 10:00:00', '2026-04-15 11:00:00', 'Oficina', 'alta', 1, 1),
+('Examen', 'Examen de programación', '2026-04-20 13:00:00', '2026-04-20 14:00:00', 'Universidad', 'alta', 2, 2),
+('Fiesta', 'Fiesta de Manolito', '2026-06-18 20:00:00', '2026-06-19 1:00:00', 'Casa de Manolito', 'media', 3, 3),
+('Quedada', 'Quedar con Karima', '2026-07-08 14:00:00', '2026-07-08 17:00:00', 'Restaurante Tony', 'muy alta', 1, 4),
+('Partido', 'Partido de fútbol', '2026-04-17 09:00:00', '2026-04-17 10:30:00', 'Estadio Metropolitano', 'baja', 2, 1),
+('Cine', 'Ir al cine con Diego', '2026-04-25 18:00:00', '2026-04-15 20:00:00', 'Yelmo cines', 'media', 2, 2),
+('Cita médica', 'Revisión anual', '2026-04-18 09:00:00', '2026-04-18 09:30:00', 'Centro salud', 'media', 3, 3);
 
 -- CATEGORIAS TAREA
 INSERT INTO CATEGORIA_TAREA (nombre, color)
@@ -47,13 +47,13 @@ VALUES
 -- TAREAS
 INSERT INTO TAREA (titulo, descripcion, fecha_limite, estado, prioridad, id_usuario, id_categoria_tarea)
 VALUES
-('Hacer proyecto de programación', 'Terminar proyecto de programación', '2026-04-20', 'pendiente', 'alta', 19, 1),
-('Ir a comprar comida', 'Ir a comprar comida al Mercadona', '2026-05-05', 'pendiente', 'media', 20, 3),
-('Clase de conducir', 'Ir a la autoescuela a la clase de conducir', '2026-04-28', 'pendiente', 'alta', 19, 3),
-('Estudiar sistemas informáticos', 'estudiar para el examen de sistemas', '2026-04-22', 'pendiente', 'alta', 21, 1),
-('Pasear al perro', 'Dar paseo por el parque con el perro', '2026-04-20', 'pendiente', 'baja', 21, 3),
-('Limpiar', 'Limpiar la casa', '2026-04-24', 'pendiente', 'baja', 19, 3),
-('Recoger paquete', 'Ir a recoger el paquete', '2026-04-20', 'terminada', 'alta', 20, 2);
+('Hacer proyecto de programación', 'Terminar proyecto de programación', '2026-04-20', 'pendiente', 'alta', 1, 1),
+('Ir a comprar comida', 'Ir a comprar comida al Mercadona', '2026-05-05', 'pendiente', 'media', 2, 2),
+('Clase de conducir', 'Ir a la autoescuela a la clase de conducir', '2026-04-28', 'pendiente', 'alta', 3, 3),
+('Estudiar sistemas informáticos', 'estudiar para el examen de sistemas', '2026-04-22', 'pendiente', 'alta', 1, 1),
+('Pasear al perro', 'Dar paseo por el parque con el perro', '2026-04-20', 'pendiente', 'baja', 2, 2),
+('Limpiar', 'Limpiar la casa', '2026-04-24', 'pendiente', 'baja', 3, 3),
+('Recoger paquete', 'Ir a recoger el paquete', '2026-04-20', 'terminada', 'alta', 1, 1);
 
 -- ETIQUETAS
 INSERT INTO ETIQUETA (nombre)

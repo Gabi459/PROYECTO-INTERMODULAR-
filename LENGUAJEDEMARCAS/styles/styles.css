@@ -1,52 +1,67 @@
 /*ESTILOS GENERALES*/
 body {
-    font-family: Arial, sans-serif; /*Fuente principal*/
-    margin: 0; /*Elimina márgenes por defecto*/
-    background-color: #f5f7fa; /*Fondo general suave*/
+    font-family: Arial, sans-serif; /*define la fuente principal del sitio*/
+    margin: 0; /*elimina los márgenes por defecto en el navegador*/
+    background-color: #f5f7fa; /*establece el color del fondo*/
+
+    display: flex;/*Activa flexbox*/
+    flex-direction: column;/*elementos en vertical*/
+    min-height: 100vh;/*ocupa toda la pantalla*/
+
+    /*patron del fondo*/
+    background-image:
+        linear-gradient(45deg, rgba(30,144,255,0.05) 25%, transparent 25%),/*crea líneas diagonales a 45° con color azul muy suave (5% opacidad)*/
+        linear-gradient(-45deg, rgba(30,144,255,0.05) 25%, transparent 25%);/*crea líneas diagonales en sentido contrario (-45°) para formar el patrón de rombos*/
+
+    background-size: 40px 40px;/* Define el tamaño del patrón (cada “bloque” mide 40px x 40px) */
 }
 
-/*HEADER SIMPLE (PORTADA)*/
-.header-simple {
-    text-align: center; /*Centra el contenido*/
-    padding: 40px 20px; /*Espaciado interno*/
-    background: linear-gradient(135deg, #1e90ff, #4facfe); /*Fondo degradado*/
-    color: white; /*Texto blanco*/
+main {
+    flex: 1; /* ocupa todo el espacio disponible */
+}
 
-    /*Efecto de borde + sombra en el texto*/
-    text-shadow: 
-        -1px -1px 0 #000,  
-         1px -1px 0 #000,
-        -1px  1px 0 #000,
-         1px  1px 0 #000,
-         4px 4px 0px rgba(0,0,0,0.2);
+/*HEADER SIMPLE (ES LA PORTADA)*/
+.header-simple {
+    text-align: center; /*centra el contenido horizontalmente*/
+    padding: 40px 20px; /*añade el espacio interno arriba,abajo y a los lados*/
+    background: linear-gradient(135deg, #1e90ff, #4facfe); /*fondo degradado*/
+    color: white; /*color del texto en blanco*/
+
+    /*pone sombra al texto para efecto en el borde */
+    text-shadow:
+        -1px -1px 0 #000, /*sombra arriba a la izquierda*/
+         1px -1px 0 #000, /*sombra arriba a la derecha*/
+        -1px  1px 0 #000, /*sombra abajo a la izquierda*/
+         1px  1px 0 #000, /*sombra abajo a la derecha*/
+         4px 4px 0px rgba(0,0,0,0.2); /*sombra externa*/
 }
 
 .header-simple h1 {
-    font-size: 36px; /*Tamaño grande del título*/
-    margin: 0; /*Sin margen*/
+    font-size: 36px; /*tamaño grande del título*/
+    margin: 0; /*elimina los márgenes*/
 }
 
 /*HEADER PRINCIPAL*/
 header {
-    display: flex; /*Layout en fila*/
-    justify-content: space-between; /*Separa logo y menú*/
-    align-items: center; /*Alinea verticalmente*/
-    background: #1e90ff; /*Color azul*/
-    color: white;
-    padding: 15px;
-    border-bottom: 2px solid black; /*Línea inferior*/
+    display: flex; /*activa flexbox*/
+    justify-content: space-between; /*separa el logo y el menú */
+    align-items: center; /*centra verticalmente*/
+    background: #1e90ff; /*color azul de fondo*/
+    color: white; /*texto en blanco*/
+    padding: 15px; /*espaciado interno*/
+    border-bottom: 2px solid black; /*línea inferior negra*/
 }
 
 /*LOGO*/
 .logo {
-    font-weight: 900; /*Texto muy grueso*/
-    font-size: 32px;
-    font-family: 'Arial Black', sans-serif;
-    color: #ffffff;
-    letter-spacing: 1px;
-    text-transform: uppercase; /*Todo en mayúsculas*/
+    font-weight: 900; /*texto muy grueso*/
+    font-size: 32px; /*tamaño grande*/
+    font-family: 'Arial Black', sans-serif; /*fuente más impactante*/
+    color: #ffffff; /*color blanco*/
+    letter-spacing: 1px; /*espaciado entre letras*/
+    text-transform: uppercase; /*convierte texto a mayúsculas*/
 
-    /*Borde negro + sombra*/
+    /*sombra para dar efecto de borde*/
     text-shadow: 
         -1px -1px 0 #000,  
          1px -1px 0 #000,
@@ -57,261 +72,253 @@ header {
 
 /*NAVEGACIÓN*/
 nav ul {
-    display: flex; /*Menú horizontal*/
-    list-style: none; /*Quita puntos de lista*/
-    gap: 20px; /*Espacio entre enlaces*/
+    display: flex; /*menú en horizontal*/
+    list-style: none; /*quita los puntos de lista*/
+    gap: 20px; /*espacio entre elementos*/
 }
 
 nav a {
-    color: white;
-    text-decoration: none; /*Sin subrayado*/
-    font-weight: bold;
-    border-radius: 8px;
+    color: white; /*color del texto*/
+    text-decoration: none; /*quita el subrayado*/
+    font-weight: bold; /*texto en negrita*/
+    border-radius: 8px; /*bordes redondeados*/
 
-    padding: 8px 16px; /*Espacio interno*/
-    border: 2px solid white; /*Borde blanco*/
-    background: transparent;
-    display: inline-block;
-    transition: all 0.2s; /*Animación suave*/
+    padding: 8px 16px; /*espacio interno*/
+    border: 2px solid white; /*borde en blanco*/
+    background: transparent; /*fondo transparente*/
+    display: inline-block; /*permite el padding correcto*/
+    transition: all 0.2s; /*animación*/
 }
 
 nav a:hover {
-    background: white; /*Fondo blanco al pasar*/
-    color: #1e90ff; /*Texto azul*/
+    background: white; /*fondo blanco al pasar ratón*/
+    color: #1e90ff; /*texto  en azul */
 }
 
 /*HERO (SECCIÓN PRINCIPAL)*/
 .hero {
-    text-align: center; /*Centra contenido*/
-    padding: 50px;
+    text-align: center; /*centra el contenido*/
+    padding: 50px; /*espaciado interno*/
 }
 
 /*BOTONES*/
 .btn {
-    background: #1e90ff;
-    color: white;
-    padding: 12px 24px;
-    display: inline-block;
-    border-radius: 6px;
-    text-decoration: none;
-    font-family: sans-serif;
-    font-weight: 600;
+    background: #1e90ff; /*fondo en azul*/
+    color: white; /*texto en blanco */
+    padding: 12px 24px; /*tamaño del botón*/
+    display: inline-block; /*permite el padding*/
+    border-radius: 6px; /*bordes redondeados*/
+    text-decoration: none; /*quita el subrayado*/
+    font-family: sans-serif; /*fuente*/
+    font-weight: 600; /*seminegrita*/
 
-    border: 2px solid black; /*Borde negro*/
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 2px solid black; /*borde en negro*/
+    cursor: pointer; /*cursor  de tipo botón*/
+    transition: all 0.3s ease; /*animación */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /*sombra*/
 }
 
 .btn:hover {
-    background: #1c86ee; /*Azul más oscuro*/
-    border-color: #333;
-    transform: translateY(-2px); /*Efecto de levantar*/
+    background: #1c86ee; /*azul más oscuro*/
+    border-color: #333; /*borde más oscuro*/
+    transform: translateY(-2px); /*efecto de levantar*/
 }
 
 /*TARJETAS / FEATURES*/
 .features {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    display: grid; /* Usa grid layout */
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+    gap: 20px; /* Espacio entre tarjetas */
 }
 
 .card {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    border: 2px solid #1e90ff;
+    background: white; /*fondo en blanco*/
+    padding: 20px; /*espaciado interno*/
+    border-radius: 10px; /*bordes redondeados*/
+    border: 2px solid #1e90ff; /*borde en azul*/
 }
 
 /*CALENDARIO (ESTILO 1)*/
 .calendario {
-    display: grid;
+    display: grid; /*grid layout*/
     grid-template-columns: repeat(7, 1fr); /*7 columnas (días)*/
-    gap: 8px;
+    gap: 8px; /*espacio entre celdas*/
 
-    max-width: 900px;
-    margin: 40px auto; /*Centrado*/
-    padding: 20px;
-    border-bottom: 2px solid black;
+    max-width: 900px; /*ancho máximo*/
+    margin: 40px auto; /*centrado*/
+    padding: 20px; /*espaciado interno*/
+    border-bottom: 2px solid black; /*línea inferior*/
 }
 
 /*Nombres de los días*/
 .dia-nombre {
-    text-align: center;
-    font-weight: bold;
-    padding: 10px;
-    color: #aab6ff;
+    text-align: center; /*centra texto*/
+    font-weight: bold; /*negrita*/
+    padding: 10px; /*espaciado*/
+    color: #aab6ff; /*color*/
 }
 
-/*Días del calendario (oscuro)*/
+/*Días del calendario*/
 .dia {
-    background: #111;
-    border: 1px solid #4facfe;
-    border-radius: 10px;
+    background: #111; /*fondo oscuro*/
+    border: 1px solid #4facfe; /*borde en azul*/
+    border-radius: 10px; /*bordes redondeados*/
 
-    height: 80px;
+    height: 80px; /*altura fija*/
 
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
+    display: flex; /*flexbox*/
+    justify-content: flex-start; /*alinea a la izquierda*/
+    align-items: flex-start; /*alinea arriba*/
 
-    font-size: 16px;
-    transition: 0.2s;
+    font-size: 16px; /*tamaño texto*/
+    transition: 0.2s; /*animación*/
 }
 
-/*Hover en días*/
 .dia:hover {
-    background: #4facfe;
-    transform: scale(1.05);
+    background: #4facfe; /*cambia el color al pasar el ratón*/
+    transform: scale(1.05); /*aumenta el tamaño*/
 }
 
-/*Espacios vacíos del calendario*/
 .vacio {
-    background: transparent;
-    border: none;
+    background: transparent; /*sin fondo*/
+    border: none; /*sin borde*/
 }
 
 /*CALENDARIO (ESTILO 2)*/
 .calendario-grid {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 10px;
-    padding: 20px;
+    display: grid; /*grid*/
+    grid-template-columns: repeat(7, 1fr); /*7 columnas*/
+    gap: 10px; /*espacio*/
+    padding: 20px; /*espaciado*/
 }
 
-/*Sobrescribe el estilo anterior de .dia*/
 .dia {
-    background: white;
-    padding: 20px;
-    text-align: center;
-    border-radius: 8px;
+    background: white; /*fondo en blanco*/
+    padding: 20px; /*espaciado*/
+    text-align: center; /*centra el texto*/
+    border-radius: 8px; /*bordes redondeados*/
 }
 
 /*CONTENIDO PRINCIPAL*/
 .contenido {
-    max-width: 800px;
-    margin: 40px auto;
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    max-width: 800px; /*ancho máximo*/
+    margin: 40px auto; /*centrado*/
+    background: white; /*fondo en blanco*/
+    padding: 30px; /*espaciado*/
+    border-radius: 12px; /*bordes redondeados*/
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /*sombra*/
 }
 
 .contenido h2 {
-    margin-bottom: 20px;
-    font-size: 28px;
-    color: #4facfe;
+    margin-bottom: 20px; /*espacio debajo*/
+    font-size: 28px; /*tamaño título*/
+    color: #4facfe; /*color en azul*/
 }
 
 .contenido p {
-    line-height: 1.7; /*Mejora lectura*/
-    margin-bottom: 15px;
-    color: #333;
+    line-height: 1.7; /*mejora lectura*/
+    margin-bottom: 15px; /*espacio*/
+    color: #333; /*color del texto*/
 }
 
 /*TAREAS*/
 .tarea {
-    padding: 16px 20px;
-    margin-bottom: 12px;
-    border-radius: 8px;
-    font-family: 'Segoe UI', Roboto, sans-serif;
+    padding: 16px 20px; /*espaciado*/
+    margin-bottom: 12px; /*separación*/
+    border-radius: 8px; /*bordes*/
+    font-family: 'Segoe UI', Roboto, sans-serif; /*fuente*/
 
-    display: flex;
-    align-items: center;
+    display: flex; /*flexbox*/
+    align-items: center; /*centra en vertical*/
 
-    transition: transform 0.2s ease;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease; /*animación*/
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05); /*sombra*/
 
-    border-left: 10px solid transparent; /* Barra lateral */
+    border-left: 10px solid transparent; /*barra del lateral*/
 }
 
-/*Efecto hover*/
 .tarea:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transform: translateY(-2px); /*movimiento arriba*/
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /*sombra mayor*/
 }
 
-/*Tarea pendiente*/
 .pendiente {
-    background: #ffffff;
-    border-left-color: #ff5252; /*Rojo*/
-    color: #444;
+    background: #ffffff; /*fondo en blanco*/
+    border-left-color: #ff5252; /*barra roja*/
+    color: #444; /*texto oscuro*/
 }
 
-/*Tarea completada*/
 .completada {
-    background: #f8fff8;
-    border-left-color: #4caf50; /*Verde*/
-    color: #888;
-    text-decoration: line-through; /*Tachado*/
+    background: #f8fff8; /*fondo verde claro*/
+    border-left-color: #4caf50; /*barra verde*/
+    color: #888; /*texto gris*/
+    text-decoration: line-through; /*texto tachado*/
 }
 
 /*FORMULARIO*/
 .formulario {
-    display: flex;
-    flex-direction: column; /*Elementos en columna*/
-    width: 300px;
-    margin: auto;
+    display: flex; /*flexbox*/
+    flex-direction: column; /*elementos en columna*/
+    width: 300px; /*ancho fijo*/
+    margin: auto; /*centrado*/
 }
 
-/*Inputs y textarea*/
 input,
 textarea {
-    margin: 10px 0;
-    padding: 8px;
+    margin: 10px 0; /*separación*/
+    padding: 8px; /*espaciado interno */
 }
 
 /*DESTACADOS*/
 strong {
-    color: #1e90ff; /*Resalta texto*/
+    color: #1e90ff; /*texto en azul*/
 }
 
 /*NOTAS*/
 .nota {
-    margin-top: 15px;
-    font-size: 13px;
-    color: #aab6ff;
-    font-style: italic;
+    margin-top: 15px; /*espacio superior*/
+    font-size: 13px; /*tamaño pequeño*/
+    color: #aab6ff; /*color suave*/
+    font-style: italic; /*cursiva*/
 }
 
-/*SECCIÓN CONTACTO*/
+/*CONTACTO*/
 .contacto-container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 40px;
+    display: flex; /*flexbox */
+    justify-content: center; /*centra horizontal*/
+    align-items: flex-start; /*alinea arriba*/
+    gap: 40px; /*espacio */
 
-    padding: 60px 40px;
-    max-width: 1000px;
-    margin: 40px auto;
+    padding: 60px 40px; /*espaciado*/
+    max-width: 1000px; /*ancho máximo*/
+    margin: 40px auto; /*centrado*/
 
-    background: #ffffff;
-    border: 3px solid #000; /*Marco negro*/
-    border-radius: 12px;
-    box-shadow: none;
+    background: #ffffff; /*fondo blanco*/
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /*sombra*/
+    border-radius: 12px; /*bordes*/
 }
 
 /*FOOTER*/
 footer {
-    width: 100%;
-    text-align: center; /* Centra el texto */
-    padding: 25px 0;
+    width: 100%; /*ancho completo*/
+    text-align: center; /*centra el texto*/
+    padding: 25px 0; /*espaciado*/
     
-    background: linear-gradient(135deg, #111, #1c1c1c);
-    color: #ccc;
+    background: linear-gradient(135deg, #111, #1c1c1c); /*fondo oscuro*/
+    color: #ccc; /*texto en gris*/
 
-    border-top: 2px solid #1e90ff;
+    border-top: 2px solid #1e90ff; /*línea superior*/
 }
 
-/*RESPONSIVE (MÓVILES)*/
+/*RESPONSIVE*/
 @media (max-width: 768px) {
     .features {
-        flex-direction: column; /*Pasa a vertical*/
-        align-items: center;
+        flex-direction: column; /*cambia a vertical (aunque aquí usas grid)*/
+        align-items: center; /*centra*/
     }
 
     nav ul {
-        flex-direction: column; /*Menú en columna*/
+        flex-direction: column; /*menú vertical*/
     }
 
     .calendario-grid {

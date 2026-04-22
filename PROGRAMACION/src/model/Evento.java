@@ -1,21 +1,32 @@
 package model;
 
+import java.time.LocalDateTime;
+
 public class Evento {
 
+    //ATRIBUTOS
+    private int id_evento;
     private String titulo;
     private String descripcion;
-    private String fechainicio;    
-    private String fechafin;
+    private LocalDateTime fecha_inicio;    
+    private LocalDateTime fecha_fin;
     private String ubicacion;
     private String prioridad;
 
-    public Evento(String titulo, String descripcion, String fechainicio, String fechafin, String ubicacion, String prioridad) {
+    //CONSTRUCTOR
+    public Evento(int id_evento, String titulo, String descripcion, LocalDateTime fecha_inicio, LocalDateTime fecha_fin, String ubicacion, String prioridad) {
+        this.id_evento = id_evento;
         this.titulo = titulo;
         this.descripcion = descripcion;
-        this.fechainicio = fechainicio;
-        this.fechafin = fechafin;
+        this.fecha_inicio = fecha_inicio;
+        this.fecha_fin = fecha_fin;
         this.ubicacion = ubicacion;
         this.prioridad = prioridad;
+    }
+
+    //GETTERS Y SETTERS
+    public int getIdEvento() {
+        return id_evento;
     }
 
     public String getTitulo() {
@@ -26,28 +37,28 @@ public class Evento {
         this.titulo = titulo;
     }
 
-    public String getDescripcio() {
+    public String getDescripcion() {
         return descripcion;
     }
 
-    public void setDescripcio(String descripcion) {
+    public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
 
-    public String getFechainicio() {
-        return fechainicio;
+    public LocalDateTime getFechaInicio() {
+        return fecha_inicio;
     }
 
-    public void setFechainicio(String fechainicio) {
-        this.fechainicio = fechainicio;
+    public void setFechaInicio(LocalDateTime fechainicio) {
+        this.fecha_inicio = fecha_inicio;
     }
 
-    public String getFechafin() {
-        return fechafin;
+    public LocalDateTime getFechaFin() {
+        return fecha_fin;
     }
 
-    public void setFechafin(String fechafin) {
-        this.fechafin = fechafin;
+    public void setFechaFin (LocalDateTime fecha_fin) {
+        this.fecha_fin = fecha_fin;
     }
 
     public String getUbicacion() {

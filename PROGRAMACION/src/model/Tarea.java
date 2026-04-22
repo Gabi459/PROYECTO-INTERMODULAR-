@@ -1,19 +1,34 @@
 package model;
 
+import java.util.Date;
+
 public class Tarea {
 
+    //ATRIBUTOS
+    private int id_tarea;
     private String titulo;
     private String descripcion;
-    private String fechalimite;
+    private Date fecha_limite;
     private String estado;
     private String prioridad;
 
-    public Tarea(String titulo, String descripcion, String fechalimite, String estado, String prioridad) {
+    //CONSTRUCTOR
+    public Tarea(int id_tarea, String titulo, String descripcion, Date fecha_limite, String estado, String prioridad) {
+        this.id_tarea = id_tarea;
         this.titulo = titulo;
         this.descripcion = descripcion;
-        this.fechalimite = fechalimite;
+        this.fecha_limite = fecha_limite;
         this.estado = estado;
         this.prioridad = prioridad;
+    }
+
+    //GETTERS Y SETTERS
+    public int getId_tarea() {
+        return id_tarea;
+    }
+
+    public void setId_tarea(){
+        this.id_tarea = id_tarea;
     }
 
     public String getTitulo() {
@@ -32,12 +47,12 @@ public class Tarea {
         this.descripcion = descripcion;
     }
 
-    public String getFechalimite() {
-        return fechalimite;
+    public Date getFechaLimite() {
+        return fecha_limite;
     }
 
-    public void setFechalimite(String fechalimite) {
-        this.fechalimite = fechalimite;
+    public void setFechaLimite(Date fechalimite) {
+        this.fecha_limite = fecha_limite;
     }
 
     public String getEstado() {

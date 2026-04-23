@@ -56,7 +56,7 @@ VALUES
 ('Limpiar', 'Limpiar la casa', '2026-04-24', 'pendiente', 'baja', 3, 3),
 ('Recoger paquete', 'Ir a recoger el paquete', '2026-04-20', 'terminada', 'alta', 1, 1);
 
--- ETIQUETAS
+-- ETIQUETAS                                                                                                                                                                             
 INSERT INTO ETIQUETA (nombre)
 VALUES
 ('Urgente'), ('Importante'), ('Poco importante'), ('Nada importante');

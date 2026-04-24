@@ -27,6 +27,9 @@ La web de AgendaPro está compuesta por las siguientes páginas:
 * **Contacto (contacto.html)**
   Formulario o información de contacto.
 
+* **Login (login.html)**
+  Pagina en la que se introduce el usuario y al contraseña
+
 ---
 
 ## ¿Cómo abrir o visualizar la web?

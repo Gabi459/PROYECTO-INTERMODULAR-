@@ -7,7 +7,9 @@ En la actualidad las personas tienen dificulated para organizar su tiempo y reco
 Hemos utilizado estas tecnologías:
 · HTML para la estructura de la web.
 · CSS para el diseño y los estilos.
+. JavaScript para el funcionamiento de la web
 · MySQL para la base de datos.
+. Java para el funcionamiento del programa
 
 
 

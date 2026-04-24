@@ -84,7 +84,7 @@ public class TareaDAO {
     }
 
     // AÑADIR UNA NUEVA TAREA, en la base de datos
-    public void insertarTarea(Connection conex, Tarea t, int idUsuario) {
+    public void insertarTarea(Connection conex, Tarea tarea, int idUsuario) {
 
         // Consulta SQL con parámetros
         String sql = "INSERT INTO tarea (titulo, descripcion, fecha_limite, estado, prioridad, id_usuario) VALUES (?, ?, ?, ?, ?, ?)";
@@ -92,14 +92,14 @@ public class TareaDAO {
         try (PreparedStatement ps = conex.prepareStatement(sql)) {
 
             // asigna los valores a los parámetros
-            ps.setString(1, t.getTitulo());
-            ps.setString(2, t.getDescripcion());
+            ps.setString(1, tarea.getTitulo());
+            ps.setString(2, tarea.getDescripcion());
 
             // conversión de java.util.Date a java.sql.Date
-            ps.setDate(3, new java.sql.Date(t.getFechaLimite().getTime()));
+            ps.setDate(3, new java.sql.Date(tarea.getFechaLimite().getTime()));
 
-            ps.setString(4, t.getEstado());
-            ps.setString(5, t.getPrioridad());
+            ps.setString(4, tarea.getEstado());
+            ps.setString(5, tarea.getPrioridad());
             ps.setInt(6, idUsuario);
 
             // se añade la nueva tarea

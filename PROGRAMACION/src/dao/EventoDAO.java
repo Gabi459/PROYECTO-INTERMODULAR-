@@ -90,7 +90,7 @@ public class EventoDAO {
     }
 
     // AÑADIR UN EVENTO en la base de datos
-    public void insertarEvento(Connection conex, Evento e, int idUsuario) {
+    public void insertarEvento(Connection conex, Evento evento, int idUsuario) {
 
         // consulta SQL con parámetros (uso seguro de PreparedStatement)
         String sql = "INSERT INTO evento (titulo, descripcion, fecha_inicio, fecha_fin, ubicacion, prioridad, id_usuario) VALUES (?, ?, ?, ?, ?, ?, ?)";
@@ -98,15 +98,15 @@ public class EventoDAO {
         try (PreparedStatement ps = conex.prepareStatement(sql)) {
 
             // Asignamos los valores a los parámetros
-            ps.setString(1, e.getTitulo());
-            ps.setString(2, e.getDescripcion());
+            ps.setString(1, evento.getTitulo());
+            ps.setString(2, evento.getDescripcion());
 
             // Convertimos LocalDateTime a Timestamp para SQL
-            ps.setTimestamp(3, java.sql.Timestamp.valueOf(e.getFechaInicio()));
-            ps.setTimestamp(4, java.sql.Timestamp.valueOf(e.getFechaFin()));
+            ps.setTimestamp(3, java.sql.Timestamp.valueOf(evento.getFechaInicio()));
+            ps.setTimestamp(4, java.sql.Timestamp.valueOf(evento.getFechaFin()));
 
-            ps.setString(5, e.getUbicacion());
-            ps.setString(6, e.getPrioridad());
+            ps.setString(5, evento.getUbicacion());
+            ps.setString(6, evento.getPrioridad());
             ps.setInt(7, idUsuario);
 
             // se ejecuta añadir el evento a la base de datos

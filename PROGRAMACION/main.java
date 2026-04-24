@@ -18,7 +18,7 @@ public class main {
     public static void main(String[] args) {
 
         // Crea un objeto Scanner para leer entrada del usuario
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
         try {
             // Obtiene la conexión a la base de datos
@@ -42,8 +42,8 @@ public class main {
                 System.out.println("0. Salir");
 
                 // Lee la opción elegida
-                opcion = sc.nextInt();
-                sc.nextLine(); // Limpia el buffer
+                opcion = scanner.nextInt();
+                scanner.nextLine(); // Limpia el buffer
 
                 // Evalúa la opción elegida
                 switch (opcion) {
@@ -52,14 +52,14 @@ public class main {
                     case 1:
                         // Pide email al usuario
                         System.out.print("Email: ");
-                        String email = sc.nextLine();
+                        String emailUsuario = scanner.nextLine();
 
                         // Pide contraseña
                         System.out.print("Password: ");
-                        String pass = sc.nextLine();
+                        String passwordUsuario = scanner.nextLine();
 
                         // Intenta hacer login y devuelve el id del usuario si es correcto
-                        int idUsuario = usuarioDAO.login(conexion, email, pass);
+                        int idUsuario = usuarioDAO.login(conexion, emailUsuario, passwordUsuario);
 
                         // Si el login es correcto
                         if (idUsuario != -1) {
@@ -79,8 +79,8 @@ public class main {
                                 System.out.println("0. Volver");
 
                                 // Lee opción del submenú
-                                subop = sc.nextInt();
-                                sc.nextLine();
+                                subop = scanner.nextInt();
+                                scanner.nextLine();
 
                                 switch (subop) {
 
@@ -117,32 +117,32 @@ public class main {
                                     case 3:
                                         // Solicita datos del evento
                                         System.out.print("Título: ");
-                                        String titulo = sc.nextLine();
+                                        String tituloEvento = scanner.nextLine();
 
                                         System.out.print("Descripción: ");
-                                        String desc = sc.nextLine();
+                                        String descripcionEvento = scanner.nextLine();
 
                                         System.out.print("Fecha inicio (yyyy-MM-ddTHH:mm): ");
-                                        String fi = sc.nextLine();
+                                        String fechaInicioEvento = scanner.nextLine();
 
                                         System.out.print("Fecha fin (yyyy-MM-ddTHH:mm): ");
-                                        String ff = sc.nextLine();
+                                        String fechaFinEvento = scanner.nextLine();
 
                                         System.out.print("Ubicación: ");
-                                        String ubi = sc.nextLine();
+                                        String ubicacionEvento = scanner.nextLine();
 
                                         System.out.print("Prioridad: ");
-                                        String prio = sc.nextLine();
+                                        String prioridadEvento = scanner.nextLine();
 
                                         // Crea objeto Evento
                                         Evento evento = new Evento(
                                                 0,
-                                                titulo,
-                                                desc,
-                                                java.time.LocalDateTime.parse(fi),
-                                                java.time.LocalDateTime.parse(ff),
-                                                ubi,
-                                                prio);
+                                                tituloEvento,
+                                                descripcionEvento,
+                                                java.time.LocalDateTime.parse(fechaInicioEvento),
+                                                java.time.LocalDateTime.parse(fechaFinEvento),
+                                                ubicacionEvento,
+                                                prioridadEvento);
 
                                         // Inserta el evento en la base de datos
                                         eventoDAO.insertarEvento(conexion, evento, idUsuario);
@@ -152,25 +152,25 @@ public class main {
                                     case 4:
                                         // Solicita datos de la tarea
                                         System.out.print("Título: ");
-                                        String t = sc.nextLine();
+                                        String tituloTarea = scanner.nextLine();
 
                                         System.out.print("Descripción: ");
-                                        String d = sc.nextLine();
+                                        String descripcionTarea = scanner.nextLine();
 
                                         System.out.print("Fecha límite (yyyy-MM-dd): ");
-                                        String fl = sc.nextLine();
+                                        String fechaLimiteTarea = scanner.nextLine();
 
                                         System.out.print("Prioridad: ");
-                                        String pr = sc.nextLine();
+                                        String prioridadTarea = scanner.nextLine();
 
                                         // Crea objeto Tarea
                                         Tarea tarea = new Tarea(
                                                 0,
-                                                t,
-                                                d,
-                                                java.sql.Date.valueOf(fl),
+                                                tituloTarea,
+                                                descripcionTarea,
+                                                java.sql.Date.valueOf(fechaLimiteTarea),
                                                 "pendiente",
-                                                pr);
+                                                prioridadTarea);
 
                                         // Inserta la tarea
                                         tareaDAO.insertarTarea(conexion, tarea, idUsuario);
@@ -180,8 +180,8 @@ public class main {
                                     case 5:
                                         // Pide ID del evento
                                         System.out.print("ID del evento a eliminar: ");
-                                        int idEvento = sc.nextInt();
-                                        sc.nextLine();
+                                        int idEvento = scanner.nextInt();
+                                        scanner.nextLine();
 
                                         // Elimina el evento
                                         eventoDAO.eliminarEvento(conexion, idEvento);
@@ -191,8 +191,8 @@ public class main {
                                     case 6:
                                         // Pide ID de la tarea
                                         System.out.print("ID de la tarea a eliminar: ");
-                                        int idTarea = sc.nextInt();
-                                        sc.nextLine();
+                                        int idTarea = scanner.nextInt();
+                                        scanner.nextLine();
 
                                         // Elimina la tarea
                                         tareaDAO.eliminarTarea(conexion, idTarea);
@@ -226,19 +226,19 @@ public class main {
                     case 3:
                         // Solicita datos
                         System.out.print("Nombre: ");
-                        String n = sc.nextLine();
+                        String nombre = scanner.nextLine();
 
                         System.out.print("Apellidos: ");
-                        String a = sc.nextLine();
+                        String apellidos = scanner.nextLine();
 
                         System.out.print("Email: ");
-                        String e = sc.nextLine();
+                        String email = scanner.nextLine();
 
                         System.out.print("Password: ");
-                        String p = sc.nextLine();
+                        String password = scanner.nextLine();
 
                         // Crea objeto Usuario
-                        Usuario nuevo = new Usuario(0, n, a, e, p, new java.util.Date());
+                        Usuario nuevo = new Usuario(0, nombre, apellidos, email, password, new java.util.Date());
 
                         // Inserta usuario
                         usuarioDAO.insertarUsuario(conexion, nuevo);
@@ -247,8 +247,8 @@ public class main {
                     // ELIMINAR USUARIO
                     case 4:
                         System.out.print("ID del usuario a eliminar: ");
-                        int idEliminar = sc.nextInt();
-                        sc.nextLine();
+                        int idEliminar = scanner.nextInt();
+                        scanner.nextLine();
 
                         // Elimina usuario
                         usuarioDAO.eliminarUsuario(conexion, idEliminar);
@@ -275,6 +275,7 @@ public class main {
         }
 
         // Cierra el Scanner
-        sc.close();
+        scanner
+                .close();
     }
 }

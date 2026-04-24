@@ -8,16 +8,16 @@ VALUES
 -- CONTACTOS
 INSERT INTO CONTACTO (nombre, apellidos, telefono, email, direccion, notas, id_usuario)
 VALUES
-('Pedro', 'Sánchez', '640111222', 'pedro@mail.com', 'Madrid', 'Amigo trabajo', 19),
-('Lucía', 'Fernández', '620333444', 'lucia@mail.com', 'Madrid', 'Cliente', 20),
-('Diego', 'Garrido', '640933401', 'diego@mail.com', 'Perú', 'Amigo', 21),
-('Jeremy', 'González', '680753901', 'jeremy@mail.com', 'RD', 'Primo', 19),
-('Gabriel', 'Martín', '661363425', 'gabriel@mail.com', 'Madrid', 'Jefe', 21),
-('Manolito', 'Lopez', '605545678', 'manolo@mail.com', 'Alicante', 'Cocinero', 20),
-('Marcela', 'Martin', '613094783', 'marcelita@mail.com', 'Madrid', 'Profesora', 19),
-('Álvaro', 'Peralta García', '647694837', 'alavarito2mail.com', 'Valencia',"Obrero",20),
-('Esmel', 'Berejil Benasi', '693827523', 'esmel@mail.com', 'Madrid', 'Amigo Uni', 21),
-('Antonio', 'Asencio Luna', '675837232', 'tony2@mail.com', 'Madrid', 'Mecánico', 19);
+('Pedro', 'Sánchez', '640111222', 'pedro@mail.com', 'Madrid', 'Amigo trabajo', 1),
+('Lucía', 'Fernández', '620333444', 'lucia@mail.com', 'Madrid', 'Cliente', 2),
+('Diego', 'Garrido', '640933401', 'diego@mail.com', 'Perú', 'Amigo', 3),
+('Jeremy', 'González', '680753901', 'jeremy@mail.com', 'RD', 'Primo', 1),
+('Gabriel', 'Martín', '661363425', 'gabriel@mail.com', 'Madrid', 'Jefe', 3),
+('Manolito', 'Lopez', '605545678', 'manolo@mail.com', 'Alicante', 'Cocinero', 2),
+('Marcela', 'Martin', '613094783', 'marcelita@mail.com', 'Madrid', 'Profesora', 1),
+('Álvaro', 'Peralta García', '647694837', 'alavarito2mail.com', 'Valencia',"Obrero",2),
+('Esmel', 'Berejil Benasi', '693827523', 'esmel@mail.com', 'Madrid', 'Amigo Uni', 3),
+('Antonio', 'Asencio Luna', '675837232', 'tony2@mail.com', 'Madrid', 'Mecánico', 1);
 
 -- CATEGORIAS EVENTO
 INSERT INTO CATEGORIA_EVENTO (nombre, color)

@@ -87,7 +87,7 @@ public class UsuarioDAO {
     }
 
     // AÑADIR UN NUEVO USUARIO, en la base de datos
-    public void insertarUsuario(Connection conex, Usuario u) {
+    public void insertarUsuario(Connection conex, Usuario usuario) {
 
         // Consulta SQL con parámetros para insertar un nuevo usuario
         String sql = "INSERT INTO usuario (nombre, apellidos, email, password, fecha_registro) VALUES (?, ?, ?, ?, ?)";
@@ -95,13 +95,13 @@ public class UsuarioDAO {
         try (PreparedStatement ps = conex.prepareStatement(sql)) {
 
             // Asigna valores a los parámetros de la consulta
-            ps.setString(1, u.getNombre());
-            ps.setString(2, u.getApellidos());
-            ps.setString(3, u.getEmail());
-            ps.setString(4, u.getPassword());
+            ps.setString(1, usuario.getNombre());
+            ps.setString(2, usuario.getApellidos());
+            ps.setString(3, usuario.getEmail());
+            ps.setString(4, usuario.getPassword());
 
             // Convierte java.util.Date a java.sql.Date
-            ps.setDate(5, new java.sql.Date(u.getFecha_registro().getTime()));
+            ps.setDate(5, new java.sql.Date(usuario.getFecha_registro().getTime()));
 
             // Ejecuta la inserción
             ps.executeUpdate();

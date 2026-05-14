@@ -30,6 +30,23 @@ ProyectoIntermodular/
 |   |-Modelo Relacional Agenda_digital.pdf       
 |   |-README.md
 |
+|---ENTORNOSDESARROLLO
+|
+|---ITINERARIO PERSONAL PARA LA EMPLEABILIDAD I
+|
+|---LENGUAJEDEMARCAS
+|   |-js/
+|   | |-app.js
+|   |
+|   |-styles/
+|   | |-styles.css
+|   |
+|   |-calendario.html
+|   |-contacto.html
+|   |-index.html
+|   |-sobre.html
+|
+|
 |---PROGRAMACION/
 |   |-lib/
 |   | |-mysql-connector-j-9.6.0.jar
@@ -52,19 +69,7 @@ ProyectoIntermodular/
 |   |
 |   |-README.md
 |
-|---web/
-|   |-js/
-|   | |-app.js
-|   |
-|   |-styles/
-|     |-calendario.html
-|     |-contacto.html
-|     |-index.html
-|     |-login.html
-|     |-sobre.html
-|     |-tareas.html
-|
-|---README.md
+|-README.md
 
 
 AUTORES: Jeremy González, Diego Garrido y Gabriel Martín

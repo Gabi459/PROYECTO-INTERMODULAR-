@@ -24,11 +24,8 @@ La web de AgendaPro está compuesta por las siguientes páginas:
 * **Sobre nosotros (sobre.html)**
   Información sobre el proyecto y sus desarrolladores.
 
-* **Contacto (contacto.html)**
+* **Contacto (contacto.html)** *(opcional si la tienes)*
   Formulario o información de contacto.
-
-* **Login (login.html)**
-  Pagina en la que se introduce el usuario y al contraseña
 
 ---
 
@@ -41,6 +38,7 @@ Para visualizar correctamente el proyecto:
 
    * `/index.html`
    * `/styles/`
+   * `/img/` (si hay imágenes)
 3. Haz doble clic en el archivo **index.html**
    o ábrelo con cualquier navegador web (Chrome, Edge, Firefox, etc.).
 
@@ -63,5 +61,11 @@ Proyecto desarrollado por:
 * Diego Garrido
 * Jeremy González
 * Gabriel Martín
+
+---
+
+## Observaciones
+
+Este proyecto tiene fines educativos y representa una simulación de una aplicación real de gestión de agenda.
 
 ---
